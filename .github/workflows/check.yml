@@ -24,6 +24,4 @@ jobs:
       - id: files
         uses: jitterbit/get-changed-files@v1
       - run: |
-          cd ../excerseDemo
-          cd ../excerseDemo
-          npm run ci
+          cd /home/runner/work/excerseDemo/excerseDemo
