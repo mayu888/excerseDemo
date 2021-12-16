@@ -26,8 +26,16 @@ jobs:
       - run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
             echo "Do something with this ${changed_file}."
-            project_path=$(cd `dirname $0`; pwd)
-            project_name="${project_path##*/}"
-            echo $project_path
-            echo $project_name
+            for file in `ls $1`
+            do
+              if [ -d $1"/"$file ]
+              then
+                ergodic $1"/"$file
+              else
+                local path=$1"/"$file 
+                local name=$file      
+                local size=`du --max-depth=1 $path|awk '{print $1}'` 
+                echo $name  $size $path 
+              fi
+            done
           done
