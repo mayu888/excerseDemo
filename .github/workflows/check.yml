@@ -25,3 +25,4 @@ jobs:
         uses: jitterbit/get-changed-files@v1
       - run: |
           cd /home/runner/work/excerseDemo/excerseDemo
+          npm run ci
