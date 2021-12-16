@@ -28,6 +28,7 @@ jobs:
       - name: files
         uses: jitterbit/get-changed-files@v1
       - run: |
+        cd ..
           echo "=====================";
           echo "["`date +%Y-%m-%d--%H:%M:%S`"]获取当前目录的所有文件及文件夹名字脚本 author 小白杨" ;
           echo "["`date +%Y-%m-%d--%H:%M:%S`"]开始执行";
