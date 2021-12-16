@@ -26,16 +26,5 @@ jobs:
       - run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
             echo "Do something with this ${changed_file}."
-            for file in `ls $1`
-            do
-              if [ -d $1"/"$file ]
-              then
-                ergodic $1"/"$file
-              else
-                local path=$1"/"$file 
-                local name=$file      
-                local size=`du --max-depth=1 $path|awk '{print $1}'` 
-                echo $name  $size $path 
-              fi
-            done
+            ls $1
           done
