@@ -26,7 +26,8 @@ jobs:
       - run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
             echo "Do something with this ${changed_file}."
+            project_path=$(cd `dirname $0`; pwd)
+            project_name="${project_path##*/}"
+            echo $project_path
+            echo $project_name
           done
-      - name: Run CI Script
-        run: |
-          npm run ci
