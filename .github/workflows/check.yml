@@ -26,5 +26,7 @@ jobs:
       - run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
             echo "Do something with this ${changed_file}."
-            ls
           done
+      - name: Run CI Script
+        run: |
+          npm run ci
