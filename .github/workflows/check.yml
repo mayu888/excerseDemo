@@ -21,8 +21,9 @@ jobs:
     runs-on: ubuntu-18.04 # runs a test on Ubuntu, Windows and macOS
 
     steps:
-      - name: Run CI Script
+      - id: files
         uses: jitterbit/get-changed-files@v1
       - run: |
-          console.log(1);
-        timeout-minutes: 35
+          for changed_file in ${{ steps.files.outputs.all }}; do
+            echo "Do something with this ${changed_file}."
+          done
