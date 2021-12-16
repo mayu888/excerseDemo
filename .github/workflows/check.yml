@@ -6,7 +6,7 @@
 # This workflow will install Deno and run tests across stable and nightly builds on Windows, Ubuntu and macOS.
 # For more information see: https://github.com/denolib/setup-deno
 
-name: ngiq-component-ci
+name: exercise
 
 
 on:
@@ -24,6 +24,5 @@ jobs:
       - name: Run CI Script
         uses: jitterbit/get-changed-files@v1
       - run: |
-          cd ./excerseDemo
           console.log(1);
         timeout-minutes: 35
