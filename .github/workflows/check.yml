@@ -21,6 +21,10 @@ jobs:
     runs-on: ubuntu-18.04 # runs a test on Ubuntu, Windows and macOS
 
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          path: ngiq-component
       - name: Setup Node.js v14
         uses: actions/setup-node@v2
         with:
