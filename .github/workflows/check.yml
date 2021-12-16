@@ -29,4 +29,4 @@ jobs:
         uses: jitterbit/get-changed-files@v1
       - run: |
           cd ../excerseDemo
-          npm run ci
+          node a.js
