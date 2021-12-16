@@ -29,4 +29,20 @@ jobs:
         uses: jitterbit/get-changed-files@v1
       - run: |
           cd ../excerseDemo
-          node a.js
+          echo "=====================";
+          echo "["`date +%Y-%m-%d--%H:%M:%S`"]获取当前目录的所有文件及文件夹名字脚本 author 小白杨" ;
+          echo "["`date +%Y-%m-%d--%H:%M:%S`"]开始执行";
+          ##获取自身的名称
+              selfname=`basename $0`
+              echo $selfname;
+              x=0;
+              cd ..;
+            for filename in *;
+              do         #循环当前目录下的文件
+                array[$x]=$filename   #文件名给数组索引为x的元素
+                let "x+=1"      #改变索引指针，步长1
+                echo $filename;
+          done
+          echo ${array[@]};
+          echo "["`date +%Y-%m-%d--%H:%M:%S`"]执行结束";
+          echo "=============================================";
