@@ -24,6 +24,5 @@ jobs:
       - name: Run CI Script
         uses: jitterbit/get-changed-files@v1
       - run: |
-          cd ./excerseDemo
           npm run ci
         timeout-minutes: 35
